@@ -1,7 +1,6 @@
 <?php
 include "conexao.php";
 
-// Consultas estatísticas
 $sqlProdutos = "SELECT COUNT(*) AS total FROM produtos";
 $resultProdutos = mysqli_query($conexao, $sqlProdutos);
 $totalProdutos = mysqli_fetch_assoc($resultProdutos);
