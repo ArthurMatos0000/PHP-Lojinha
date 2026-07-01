@@ -152,6 +152,10 @@ body {
     border-radius: 22px;
     padding: 22px;
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+    overflow: hidden;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .card-resumo span, .card-produto span {
     font-size: 13px;
@@ -171,6 +175,7 @@ body {
     font-size: 18px;
     margin: 10px 0;
 }
+
 .card-produto p {
     color: #475569;
     font-size: 14px;

@@ -30,8 +30,80 @@ include "componentes/header.php";
     </section>
 
     <section class="grid-produtos">
-        <?php while($produto = mysqli_fetch_assoc($resultado)) { ?>
-            <article class="card-produto">
+        <?php while($produto = mysqli_fetch_assoc($resultado)) { ?> 
+
+        <?php
+        $imagem = "padrao.jpg";
+
+        switch ($produto["Produto"]) {
+
+            case "Adaptador de chave":
+                $imagem = "adaptador_de_chave.jpg";
+                break;
+
+            case "Armario expositor":
+                $imagem = "armario_expositor.jpg";
+                break;
+
+            case "Armário para ferramentas":
+                $imagem = "armario_para_ferramentas.jpg";
+                break;
+
+            case "Bancada com 1 módulo":
+                $imagem = "bancada_1_modulo.jpg";
+                break;
+
+            case "Bancada com suporte":
+                $imagem = "bancada_com_suporte.jpg";
+                break;
+
+            case "Caixa Sanfona":
+                $imagem = "caixa_sanfona.jpg";
+                break;
+
+            case "Chave Canhão":
+                $imagem = "chave_canhao.jpg";
+                break;
+
+            case "Chave de compasso":
+                $imagem = "chave_de_compasso.jpg";
+                break;
+
+            case "Chave estrelar de bater":
+                $imagem = "chave_estrelar_de_bater.jpg";
+                break;
+
+            case "Chave fenda":
+                $imagem = "chave_fenda.jpg";
+                break;
+
+            case "Chave Fixa":
+                $imagem = "chave_fixa.jpg";
+                break;
+
+            case "Chave Gancho":
+                $imagem = "chave_gancho.jpg";
+                break;
+
+            case "Chave industrial":
+                $imagem = "chave_industrial.jpg";
+                break;
+
+            case "Chave pesada":
+                $imagem = "chave_pesada.jpg";
+                break;
+        }
+        ?>
+
+            <article class="card-produto"
+            style="
+            background-image:url('img/<?php echo $imagem; ?>');
+            background-size:contain;
+            background-repeat:no-repeat;
+            background-position:center;
+            
+            min-height:250px;">
+            
                 <span><?php echo htmlspecialchars($produto["Categoria"] ?? 'Sem Categoria'); ?></span>
                 <h2><?php echo htmlspecialchars($produto["Produto"]); ?></h2>
                 <p>Referência: <?php echo htmlspecialchars($produto["Referencia"]); ?></p>
